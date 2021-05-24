@@ -1,59 +1,95 @@
-.headers .img {
+:root {
+  --blue: #3498db;
+  --dark-blue: #2980b9;
+  --background: #a0b7c9;
+  --grey: rgb(32, 26, 26);
+  --light-grey: #d3c5c5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+
+
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.menu {
+  width: 20rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+.menu a {
+  text-decoration: none;
+  
+}
+
+.menu-item {
+  list-style: none;
+  border-top: 1px solid var(--grey);
+  overflow: hidden;
+  background-color: #a79e9e;
+ 
+}
+
+.btn {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 1rem 1.2rem;
+  background: var(--blue);
+  color: white;
+  position: relative;
 }
-.solblok {
+.btn::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: var(--blue);
+  left: 1.5rem;
+  bottom: -0.5rem;
+  transform: rotate(45deg);
+}
+.btn i {
+  margin-right: 1rem;
+}
+
+.menu-item__sub {
+  background: var(--grey);
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+.menu-item__sub a {
   display: block;
-  padding-top: 4%;
-  font-size: 35;
-  width: 95%;
-  height: 90px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: #e5e5f7;
-  opacity: 0.8;
-  background: linear-gradient(135deg, #dbdbe355 25%, transparent 25%) -10px 0/
-      20px 20px,
-    linear-gradient(225deg, #dbdbe3 25%, transparent 25%) -10px 0/ 20px 20px,
-    linear-gradient(315deg, #dbdbe355 25%, transparent 25%) 0px 0/ 20px 20px,
-    linear-gradient(45deg, #dbdbe3 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+  padding: 1rem 1.6rem;
+  color: white;
+  font-size: 0.9rem;
+  position: relative;
+  border-bottom: 1px solid var(--light-grey);
+}
+.menu-item__sub a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.4rem;
+  height: 100%;
+  background: var(--blue);
+  transform: translatex(-0.4rem);
+  transition: 0.3s;
+  opacity: 0;
+}
+.menu-item__sub a:hover::before {
+  opacity: 1;
+  transform: translatex(0);
 }
 
-.dikdortgen {
-  width: 180px;
-  height: 50px;
-  text-align: left;
-  padding: 10px 10px 10px 10px;
-  border-style: solid;
-  margin-top: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 2em;
-  background-color: gray;
-}
-
-.kutucuk {
-  width: 170px;
-  height: 50px;
-  text-align: left;
-  padding: 10px 10px 10px 10px;
-  border-style: solid;
-  margin-top: 5px;
-  background-color: rgb(219, 211, 211);
-  color: black;
-  font-size: 1em;
-}
-
-#ele {
-  float: left;
-}
-.tab {
-  width: 400px;
-  height: 200px;
-  background-color: ;
-}
-
-.dikme {
-  float: left;
+.menu-item:target .menu-item__sub {
+  max-height: 10em;
 }
