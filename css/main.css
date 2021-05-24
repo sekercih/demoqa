@@ -93,3 +93,10 @@ body {
 .menu-item:target .menu-item__sub {
   max-height: 10em;
 }
+
+.tab{
+ margin-right: auto;
+ 
+
+
+}
